@@ -1,0 +1,14 @@
+services:
+  generalsql-db:
+    image: postgres
+    container_name: expensestrackrsql-db
+    ports:
+      - "5433:5433" # left side is host, right side is container
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+
+volumes:
+  postgres_data:
